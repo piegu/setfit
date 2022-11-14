@@ -249,7 +249,7 @@ class SetFitModel(PyTorchModelHubMixin):
             x_train,
             y_train,
             tokenizer=self.model_body.tokenizer,
-            max_length=self.model_body.get_max_seq_length(),
+            max_length=128, #self.model_body.get_max_seq_length(),
         )
         dataloader = DataLoader(
             dataset, batch_size=batch_size, collate_fn=SetFitDataset.collate_fn, shuffle=shuffle, pin_memory=True
